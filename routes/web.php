@@ -28,4 +28,9 @@ Route::group(['prefix' => 'crawler'], function() {
         Route::get('/{slug}/chapter/{chapter}', 'Manga\MangaController@read');
         Route::get('/{slug}/scrape', 'Manga\MangaController@scrape');
     });
+
+    //manga
+    Route::group(['prefix' => 'anime'], function() {
+        Route::get('/', 'Anime\AnimeController@index')->name('anime.index');
+    });
 });

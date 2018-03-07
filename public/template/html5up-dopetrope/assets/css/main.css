@@ -1432,6 +1432,11 @@
 			width: 50%;
 		}
 
+		.image.featured.custom-anime {
+			margin: 1em auto;
+			width: 100%;
+		}
+
 		.image.left {
 			float: left;
 			margin: 0 2em 2em 0;
@@ -1839,6 +1844,10 @@
 					margin: 2.5em 0 0 0;
 				}
 
+				header.major.custom-anime {
+					margin: 2.5em 0 2.5em 0;
+				}
+
 			footer {
 				margin: 2.25em 0 0 0;
 			}
@@ -2085,6 +2094,11 @@
 					padding: 2.5em 0;
 				}
 
+				#intro-anime section {
+					margin: 0 0;
+					padding: 0 0;
+				}
+
 				#intro h2 {
 					font-size: 1.75em;
 				}
@@ -2168,6 +2182,10 @@
 				}
 
 			header.major.custom {
+				margin: 2.5em 0 0 0;
+			}
+
+			header.major.custom-anime {
 				margin: 2.5em 0 0 0;
 			}
 
