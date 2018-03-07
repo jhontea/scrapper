@@ -12,14 +12,6 @@
 */
 
 Route::get('/', function () {
-    $crawler = Goutte::request('GET', 'https://www.komikgue.com/manga/nanatsu-no-taizai/255/1');
-    $img = trim($crawler->filter('#ppp > a > img')->attr('src'));
-    $name = $crawler->filter('#ppp > a > img')->attr('alt');
-    $filename = basename($img);
-    //Image::make($img)->save(public_path('img/manga/' . $filename));
-    // $imgs = $crawler->filter('#all > img')->each(function ($node) {
-    //     $node->attr('data-src')."<br>";
-    // });
     return view('welcome');
 });
 
