@@ -19,20 +19,48 @@
 @foreach($dataScrappers as $datas)
     @foreach($datas as $data)
         <div class="4u 12u(mobile)">
-            <section class="first">
-                <a href="{!! $data['url'] !!}" target="_blank">
-                    <span class="image featured custom-anime"><img src="{{ $data['img'] }}" alt="" /></span>
-                    <header>
-                        <h3>{{ $data['title'] }}</h3>
-                        Episode {{ $data['episode'] }}
-                    </header>
-                
-                </a>
-            </section>
-            <a href="" class="button alt">Save</a>
+            <form id="registerSubmit">
+                {{ csrf_field() }}
+                <section class="first">
+                    <a href="{!! $data['url'] !!}" target="_blank">
+                        <span class="image featured custom-anime"><img src="{{ $data['img'] }}" alt="" /></span>
+                        <header>
+                            <h3>{{ $data['title'] }}</h3>
+                            Episode {{ $data['episode'] }}
+                        </header>
+                    </a>
+                </section>
+                <input type='hidden' name="title" value="{{ $data['title'] }}">
+                <input type='hidden' name="slug" value="{{ $data['slug'] }}">
+                <input type='hidden' name="image" value="{{ $data['img'] }}">
+                <button class="button alt save" value="{{ $data['title'] }}">Save</button>
+            </form>
         </div>
     @endforeach
 @endforeach
     </div>
 </section>
+@endsection
+
+@section('page-script')
+<script>
+$('form').submit(function (event) {
+    event.preventDefault()
+
+    var dataForm = $(this).serialize()
+    $.ajax({
+        type: "POST",
+        url: "/crawler/anime",
+        data: dataForm,
+        dataType: "json",
+        success: function(data) {
+            swal(data.info, data.message, data.alert);
+        },
+        error: function(data) {
+            swal(data.responseJSON.info, data.responseJSON.message, "error");
+        }
+    });
+    
+})
+</script>
 @endsection

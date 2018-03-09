@@ -41,6 +41,6 @@
 		</div>
 
 		<!-- Scripts -->
-			@include('manga.elements.script')
+			@include('anime.elements.script')
 	</body>
 </html>

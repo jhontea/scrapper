@@ -32,5 +32,6 @@ Route::group(['prefix' => 'crawler'], function() {
     //manga
     Route::group(['prefix' => 'anime'], function() {
         Route::get('/', 'Anime\AnimeController@index')->name('anime.index');
+        Route::post('/', 'Anime\AnimeController@save')->name('anime.save');
     });
 });
