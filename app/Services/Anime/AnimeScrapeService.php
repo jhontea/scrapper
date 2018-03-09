@@ -38,11 +38,13 @@ class AnimeScrapeService
                     $boxTitle = explode("Episode", $node->filter('h2 > a')->text());
                     $episode = explode(' ', trim($boxTitle[1]));
                     $url = $node->filter('h2 > a')->attr('href');
+                    $slug = explode($this->url, $url);
                     return [
                         'title'     => trim($boxTitle[0]),
                         'episode'   => $episode[0],
                         'img'       => $node->filter('div.post-thumbnail > a > img')->attr('src'),
-                        'url'       => $node->filter('h2 > a')->attr('href')
+                        'url'       => $url,
+                        'slug'      => $slug[1]
                     ];
                 });
             }
