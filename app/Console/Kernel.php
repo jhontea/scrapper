@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\ScrapeMangaCommand;
+use App\Console\Commands\ScrapeAnimeCommand;
 use App\Console\Commands\HallyuCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;

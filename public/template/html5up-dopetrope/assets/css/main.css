@@ -1437,6 +1437,10 @@
 			width: 100%;
 		}
 
+		.vip-plaza {
+			background-color: #222; padding: 50px;
+		}
+
 		.image.left {
 			float: left;
 			margin: 0 2em 2em 0;

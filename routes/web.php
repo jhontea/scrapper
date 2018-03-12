@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'crawler'], function() {
-    //manga
+    // manga
     Route::group(['prefix' => 'manga'], function() {
         Route::get('/', 'Manga\MangaController@index')->name('manga.index');
 
@@ -29,9 +29,15 @@ Route::group(['prefix' => 'crawler'], function() {
         Route::get('/{slug}/scrape', 'Manga\MangaController@scrape');
     });
 
-    //manga
+    // anime
     Route::group(['prefix' => 'anime'], function() {
         Route::get('/', 'Anime\AnimeController@index')->name('anime.index');
         Route::post('/', 'Anime\AnimeController@save')->name('anime.save');
+    });
+
+    // promo
+    Route::group(['prefix' => 'promo'], function() {
+        Route::get('/', 'Promo\PromoController@index')->name('promo.index');
+        Route::get('/{slug}', 'Promo\PromoController@show')->name('promo.show');
     });
 });
