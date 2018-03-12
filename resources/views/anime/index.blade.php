@@ -47,19 +47,34 @@
 $('form').submit(function (event) {
     event.preventDefault()
 
-    var dataForm = $(this).serialize()
-    $.ajax({
-        type: "POST",
-        url: "/crawler/anime",
-        data: dataForm,
-        dataType: "json",
-        success: function(data) {
-            swal(data.info, data.message, data.alert);
-        },
-        error: function(data) {
-            swal(data.responseJSON.info, data.responseJSON.message, "error");
+    swal({
+        title: "Are you sure?",
+        text: "You want to save this anime?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+    .then((willSave) => {
+        if (willSave) {
+            var dataForm = $(this).serialize()
+            $.ajax({
+                type: "POST",
+                url: "/crawler/anime",
+                data: dataForm,
+                dataType: "json",
+                success: function(data) {
+                    swal(data.info, data.message, data.alert);
+                },
+                error: function(data) {
+                    swal(data.responseJSON.info, data.responseJSON.message, "error");
+                }
+            });
+        } else {
+            swal("Your canceled save this anime");
         }
     });
+
+    
     
 })
 </script>
