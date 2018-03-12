@@ -20,7 +20,7 @@
                                     <td>
                                         <h3 style="color:#000000;"><b>{{ $data->title }}</b></h3>
                                         <p style="margin-top: 20px;">Chapter {{ $manga['chapter'] }} has update</p>
-                                        <p><a href="{{ url('/') }}">View</a></p>
+                                        <p><a href="{{ url('/crawler/manga/'.$manga['slug'].'/chapter/'.$manga['chapter']) }}">View</a></p>
                                     </td>
                                 </tr>
                                 <tr>
