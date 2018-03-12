@@ -58,11 +58,12 @@ class AnimeScrapeService
     //check intersect with database
     public function checkIntersection($models, $dataScrape) {
         $result = [];
-
-        foreach ($dataScrape as $data) {
-            foreach ($models as $model) {
-                if ($data['slug'] == $model['slug']) {
-                    $result[] = $data;
+        foreach ($dataScrape as $datas) {
+            foreach ($datas as $data) {
+                foreach ($models as $model) {
+                    if ($data['slug'] == $model['slug']) {
+                        $result[] = $data;
+                    }
                 }
             }
         }

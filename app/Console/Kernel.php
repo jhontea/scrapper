@@ -16,6 +16,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         ScrapeMangaCommand::class,
+        ScrapeAnimeCommand::class,
         HallyuCommand::class
     ];
 
@@ -27,7 +28,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('scrape:manga')->hourly();
+        $schedule->command('scrape:manga')->hourly()->withoutOverlapping();
+        $schedule->command('scrape:anime')->hourly()->withoutOverlapping();
     }
 
     /**

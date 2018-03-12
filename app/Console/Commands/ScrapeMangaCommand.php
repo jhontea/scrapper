@@ -79,14 +79,10 @@ class ScrapeMangaCommand extends Command
                 // store chapter
                     $this->storeChapter($manga, $data);
                 }
-                $this->info('count');
             } else {
                 // store chapter
                 $this->storeChapter($manga, $data);
-                $this->info('new');
             }
-
-            $this->info('end');
         }
     }
 

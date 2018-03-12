@@ -25,7 +25,7 @@
                     <a href="{!! $data['url'] !!}" target="_blank">
                         <span class="image featured custom-anime"><img src="{{ $data['img'] }}" alt="" /></span>
                         <header>
-                            <h3>{{ $data['title'] }}</h3>
+                            <h3 style="height:60px">{{ $data['title'] }}</h3>
                             Episode {{ $data['episode'] }}
                         </header>
                     </a>

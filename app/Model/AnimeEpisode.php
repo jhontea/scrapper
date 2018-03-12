@@ -4,14 +4,14 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Anime extends Model
+class AnimeEpisode extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'anime';
+    protected $table = 'anime_episodes';
 
     /**
      * The attributes that are mass assignable.
@@ -19,13 +19,12 @@ class Anime extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 
-        'slug',
-        'image',
+        'anime_id', 
+        'episode'
     ];
 
-    public function animeEpisodes()
+    public function anime()
     {
-        return $this->hasMany(AnimeEpisode::class, 'anime_id');
+        return $this->belongsTo(Anime::class, 'anime_id');
     }
 }

@@ -21,4 +21,18 @@ class AnimeService
     public function hasAnime($slug) {
         return Anime::where('slug', $slug)->first();
     }
+
+    public function getSelectedAnime($slug) {
+        return Anime::where('slug', $slug)
+                ->with('animeEpisodes')
+                ->first();
+    }
+
+    public function checkExistEpisode($slug, $episode) {
+        return $data = DB::table('anime as a')
+                ->join('anime_episodes as ae', 'ae.anime_id', '=', 'a.id')
+                ->where('ae.episode', $episode)
+                ->where('a.slug', $slug)
+                ->first();
+    }
 }
