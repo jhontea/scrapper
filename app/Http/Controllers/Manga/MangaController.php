@@ -68,14 +68,14 @@ class MangaController extends Controller
 
     public function read($slug, $chapter) {
         $mangaService = new MangaService();
-        $data = $mangaService->getSelectedManga($slug);
+        $data = $mangaService->getReadChapter($slug, $chapter);
         $breadcrumbs = [
             [
                 'url'   => route('manga.my'),
                 'name'  => 'My manga'
             ], [
                 'url'   => route('manga.show', ['slug' => $slug]),
-                'name'  => $data->title
+                'name'  => $data[0]->title
             ], [
                 'name'  => 'Chapter ' . $chapter
             ]

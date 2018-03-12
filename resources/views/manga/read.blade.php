@@ -8,8 +8,8 @@
 
         <!-- Content -->
             <article class="box post">
-                @if (count($data->mangaImages))
-                    @foreach ($data->mangaImages as $manga)
+                @if (count($data))
+                    @foreach ($data as $manga)
                     <a href="#" class="image featured"><img src="{{ asset($manga->image) }}" alt="" style="margin: auto"/></a><br>
                     @endforeach
                 @else

@@ -1432,6 +1432,11 @@
 			width: 50%;
 		}
 
+		.image.featured.custom-anime {
+			margin: 1em auto;
+			width: 100%;
+		}
+
 		.image.left {
 			float: left;
 			margin: 0 2em 2em 0;
@@ -1804,7 +1809,7 @@
 /* Desktop */
 
 	@media screen and (min-width: 737px) {
-
+			
 		/* Basic */
 
 			body, input, textarea, select {
@@ -1837,6 +1842,10 @@
 
 				header.major.custom {
 					margin: 2.5em 0 0 0;
+				}
+
+				header.major.custom-anime {
+					margin: 2.5em 0 2.5em 0;
 				}
 
 			footer {
@@ -2085,6 +2094,11 @@
 					padding: 2.5em 0;
 				}
 
+				#intro-anime section {
+					margin: 0 0;
+					padding: 0 0;
+				}
+
 				#intro h2 {
 					font-size: 1.75em;
 				}
@@ -2145,6 +2159,31 @@
 /* Tablet */
 
 	@media screen and (min-width: 737px) and (max-width: 1200px) {
+		/* Sweet Alert */
+
+			.swal-button {
+				background-color: #c51349;
+				color: #fff;
+				border: none;
+				box-shadow: none;
+				border-radius: 5px;
+				font-weight: 600;
+				font-size: 14px;
+				padding: 10px 24px;
+				margin: 0 50px 0px 0px;
+				cursor: pointer;
+			}
+
+			.swal-button--cancel {
+				color: #555;
+				background-color: #efefef;
+			}
+
+			.swal-button--cancel:active {
+				color: #555;
+				background-color: #efefef;
+			}
+	
 
 		/* Basic */
 
@@ -2168,6 +2207,10 @@
 				}
 
 			header.major.custom {
+				margin: 2.5em 0 0 0;
+			}
+
+			header.major.custom-anime {
 				margin: 2.5em 0 0 0;
 			}
 
@@ -2253,6 +2296,29 @@
 	}
 
 	@media screen and (max-width: 736px) {
+		/* Sweet Alert */
+		.swal-button {
+			background-color: #c51349;
+			color: #fff;
+			border: none;
+			box-shadow: none;
+			border-radius: 5px;
+			font-weight: 600;
+			font-size: 14px;
+			padding: 10px 24px;
+			margin: 0 50px 0px 0px;
+			cursor: pointer;
+		}
+
+		.swal-button--cancel {
+			color: #555;
+			background-color: #efefef;
+		}
+
+		.swal-button--cancel:active {
+			color: #555;
+			background-color: #efefef;
+		}
 
 		/* Basic */
 

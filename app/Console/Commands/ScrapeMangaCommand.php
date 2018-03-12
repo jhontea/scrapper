@@ -73,10 +73,10 @@ class ScrapeMangaCommand extends Command
                 // check if the chapter already on db
                 $exist = $this->mangaService->checkExistChapter($manga['slug'], $manga['chapter']);
                 if ($exist) {
-                    //Log::notice('Manga already up to date');
+                //Log::notice('Manga already up to date');
                     $this->info($data->title . ' chapter ' . $manga['chapter'] . ' already up to date');
                 } else {
-                    // store chapter
+                // store chapter
                     $this->storeChapter($manga, $data);
                 }
             } else {

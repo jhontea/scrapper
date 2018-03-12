@@ -5,7 +5,7 @@
                 <table width="600" cellspacing="0" cellpadding="0" border="0" align="center" style="background-color:#ffff;border-collapse: collapse;">
                     <tr>
                       <td style="font-size:6px;line-height:10px;padding:0 20px;" valign="top">
-                          <h1>MANGA CRAWLER</h1>
+                          <h1>ANIME CRAWLER</h1>
                       </td>
                     </tr>
                     <tr>
@@ -13,14 +13,14 @@
                             <table cellspacing="0" cellpadding="0" border="0" width="100%" style="text-align:center; color: #3d3d3d;">
                                 <tr>
                                     <td>
-                                        <img src="{{ $manga['img'] }}" width="50%" style="padding-bottom:20px;">
+                                        <img src="{{ $anime['img'] }}" width="50%" style="padding-bottom:20px;">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <h3 style="color:#000000;"><b>{{ $data->title }}</b></h3>
-                                        <p style="margin-top: 20px;">Chapter {{ $manga['chapter'] }} has update</p>
-                                        <p><a href="{{ url('/') }}">View</a></p>
+                                        <p style="margin-top: 20px;">Episode {{ $anime['episode'] }} has update</p>
+                                        <p><a href="{{ route('anime.index') }}">View</a></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -29,7 +29,7 @@
                                       <tr>
                                         <td>
                                           <p>
-                                            This is <strong>Manga Scrapper</strong> a website that crawl manga daily, notif updated manga, and store to local.
+                                            This is <strong>Anime Scrapper</strong> a website that crawl anime daily, notif updated anime, and store to local.
                                           </p>
                                         </td>
                                       </tr>
@@ -46,7 +46,7 @@
                                 <tbody>
                                     <tr>
                                         <td width="600" style="font-size: 12px;text-align: center; padding: 10px;">
-                                            <p>Copyright &#xA9; 2018  Manga Crawler.<br>All Rights Reserved.</p>
+                                            <p>Copyright &#xA9; 2018  Anime Crawler.<br>All Rights Reserved.</p>
                                         </td>
                                     </tr>
                                 </tbody>
