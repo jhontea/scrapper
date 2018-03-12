@@ -17,6 +17,14 @@ class MangaService
                 ->first();
     }
 
+    public function getReadChapter($slug, $chapter) {
+        return $data = DB::table('mangas as m')
+                ->join('manga_chapter as mc', 'mc.manga_id', '=', 'm.id')
+                ->where('m.slug', $slug)
+                ->where('mc.chapter', $chapter)
+                ->get();
+    }
+
     public function getMangaChapter($slug) {
         return $data = DB::table('mangas as m')
                 ->select('mc.chapter', DB::raw('COUNT(mc.chapter) as total'))
